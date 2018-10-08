@@ -32,6 +32,7 @@ public class MainVerticleTest {
       tc.assertEquals(response.statusCode(), 200);
       response.bodyHandler(body -> {
         tc.assertTrue(body.length() > 0);
+        tc.assertTrue(body.toString().equalsIgnoreCase("Hello Vert.x!"));
         async.complete();
       });
     });
